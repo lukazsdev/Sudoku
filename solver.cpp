@@ -89,8 +89,7 @@ bool Solver::solve(int index)
 		return false;
 	}
 	bool node = solve(index + 1);
-	if (node == true) { return true; }
-	return false;
+	return (node == true) ? true : false;
 }
 
 void Solver::printBoard()

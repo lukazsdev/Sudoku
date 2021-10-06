@@ -12,9 +12,7 @@ int main()
 	std::cin >> input;
 
 	for (auto i : input)
-	{
 		board.push_back(std::stoi(std::string(1, i)));
-	}
 
 	Solver solver = Solver(board);
 

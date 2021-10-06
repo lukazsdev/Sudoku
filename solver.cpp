@@ -21,13 +21,10 @@ bool Solver::isValid(int index)
 	for (int i = 0; i < 9; i++)
 	{
 		if (board[i + row * 9] == board[index] && i != col)
-		{
 			return false;
-		}
+
 		else if (board[col + i * 9] == board[index] && i != row)
-		{
 			return false;
-		}
 	}
 	
 	// grids
@@ -39,9 +36,7 @@ bool Solver::isValid(int index)
 		for (int j = gridCol * 3; j < gridCol * 3 + 3; j++) 
 		{
 			if ((board[j + i * 9] == board[index]) && (i != row) && (j != col)) 
-			{
 				return false;
-			}
 		}
 	}
 
@@ -53,9 +48,7 @@ bool Solver::isSolved()
 	for (int i = 0; i < board.size(); i++)
 	{
 		if (isEmpty(i) == true || isValid(i) == false)
-		{
 			return false;
-		}
 	}
 	return true;
 }
@@ -69,7 +62,8 @@ bool Solver::solve(int index)
 			printBoard();
 			return true;
 		}
-		else { return false; }
+		else
+			return false; 
 	}
 
 	if (isEmpty(index) == true)
@@ -83,7 +77,8 @@ bool Solver::solve(int index)
 				if (node == true) { return true; }
 				board[index] = 0;
 			}
-			else { continue; }
+			else 
+				continue; 
 		}
 		board[index] = 0;
 		return false;
@@ -99,8 +94,6 @@ void Solver::printBoard()
 	{
 		std::cout << board[i] << " ";
 		if ((i + 1) % 9 == 0 && i != 0)
-		{
 			std::cout << "\n";
-		}
 	}
 }

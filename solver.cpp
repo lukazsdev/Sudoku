@@ -50,6 +50,7 @@ bool Solver::isSolved()
 		if (isEmpty(i) == true || isValid(i) == false)
 			return false;
 	}
+	
 	return true;
 }
 

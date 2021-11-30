@@ -12,8 +12,8 @@ int main()
 	//input sudoku board as a string
 	std::cin >> input;
 
-	for (auto i : input)
-		board.push_back(std::stoi(std::string(1, i)));
+	for (auto &c : input)
+		board.push_back(std::stoi(std::string(1, c)));
 
 	Solver solver = Solver(board);
 

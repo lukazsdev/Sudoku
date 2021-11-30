@@ -9,6 +9,7 @@ int main()
 	std::vector<int> board;
 	std::string input;
 
+	//input sudoku board as a string
 	std::cin >> input;
 
 	for (auto i : input)

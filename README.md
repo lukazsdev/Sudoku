@@ -1,2 +1,2 @@
 # Sudoku-Solver
-A sudoku solver implementation in C++, with a backtracking approach.
+A sudoku solver implementation in Go

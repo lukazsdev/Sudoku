@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 const (
 	MaxRows uint8 = 9
@@ -36,6 +39,17 @@ func (sudoku *Sudoku) New(encoded string) {
 			sudoku.board[row][col] = uint8(encoded[row*9+col]) - 48
 		}
 	}
+}
+
+// encode board to string
+func (sudoku *Sudoku) Encode() string {
+	encoded := ""
+	for row := 0; row < int(MaxRows); row++ {
+		for col := 0; col < int(MaxCols); col++ {
+			encoded += strconv.Itoa(int(sudoku.board[row][col]))
+		}
+	}
+	return encoded
 }
 
 // check if the move we have just made is valid
